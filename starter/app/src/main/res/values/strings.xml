@@ -9,4 +9,7 @@
     <string name="welcome">Welcome</string>
     <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="next">Next</string>
+    <string name="instructions">Instructions</string>
+    <string name="got_it">Got it</string>
+    <string name="instructions_text">1- You can scroll in various shoes. \n2- You can add a new shoe.\n3- You can logout via logout button in appbar.\n4- You can navigate via menu in appbar.\n</string>
 </resources>

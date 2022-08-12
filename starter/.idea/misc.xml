@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Joo/source/repos/nd940-android-kotlin-course1-starter/starter/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Joo/source/repos/nd940-android-kotlin-course1-starter/starter/app/src/main/res/layout/fragment_instructions.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Joo/source/repos/nd940-android-kotlin-course1-starter/starter/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Joo/source/repos/nd940-android-kotlin-course1-starter/starter/app/src/main/res/layout/fragment_welcome.xml" value="0.24010416666666667" />
       </map>

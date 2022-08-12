@@ -16,4 +16,22 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="MainTextStyle">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">@dimen/_20sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_20sdp</item>
+
+    </style>
+
+    <style name="SecondaryTextStyle">
+        <item name="android:textSize">@dimen/_24ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/_60sdp</item>
+
+    </style>
+
+    <style name="NextButtonsHeight" >
+        <item name="android:layout_marginBottom">@dimen/_40sdp</item>
+    </style>
 </resources>
