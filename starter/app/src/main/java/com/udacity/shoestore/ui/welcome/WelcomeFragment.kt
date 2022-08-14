@@ -1,4 +1,4 @@
-package com.udacity.shoestore.welcome
+package com.udacity.shoestore.ui.welcome
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
-import com.udacity.shoestore.databinding.FragmentLoginBinding
 import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 
@@ -23,7 +22,7 @@ class WelcomeFragment : Fragment(R.layout.fragment_welcome) {
         binding = FragmentWelcomeBinding.inflate(layoutInflater , container , false)
 
         binding.welcomeNextButton.setOnClickListener{
-            it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
+            it.findNavController().navigate(R.id.action_welcomeFragment_to_instructionsFragment)
         }
 
 

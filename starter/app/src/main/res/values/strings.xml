@@ -12,4 +12,9 @@
     <string name="instructions">Instructions</string>
     <string name="got_it">Got it</string>
     <string name="instructions_text">1- You can scroll in various shoes. \n2- You can add a new shoe.\n3- You can logout via logout button in appbar.\n4- You can navigate via menu in appbar.\n</string>
+    <string name="addShoe">AddShoe</string>
+    <string name="shoeImage">ShoeImage</string>
+    <string name="name">Name : </string>
+    <string name="size">Size : </string>
+    <string name="logout">logout</string>
 </resources>
