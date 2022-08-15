@@ -31,8 +31,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
         binding.addShoeFAB.setOnClickListener {

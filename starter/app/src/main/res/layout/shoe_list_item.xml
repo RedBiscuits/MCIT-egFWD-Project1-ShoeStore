@@ -9,6 +9,12 @@
             type="com.udacity.shoestore.models.Shoe" />
     </data>
 
+    <!--
+    Constraint layout to customize my view easily,
+    TextViews aligned at bottom line and all contents centered
+    Also support for multiple screen size
+     -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,38 +40,41 @@
             style="@style/MainTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:text="@{`Name : ` + shoe.name }"
+            android:text="@={shoe.name }"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/shoe_company" />
 
+        <!--
+            Can't use 2-way Binding here as it calls a function
+            that returns a String or smth idk tbh
+        -->
         <TextView
             android:id="@+id/shoe_size"
             style="@style/MainTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="@{`Size : ` + Double.toString(shoe.size)}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_name" />
+            android:text="@{Double.toString(shoe.size)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shoe_company" />
 
         <TextView
             android:id="@+id/shoe_company"
             style="@style/MainTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="@{`Company : ` +shoe.company}"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@={shoe.company}"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_size" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/shoe_description"
             style="@style/MainTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="@{`Description : ` +shoe.description}"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@={shoe.description}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_company" />

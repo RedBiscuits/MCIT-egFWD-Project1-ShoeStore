@@ -14,13 +14,18 @@ import com.udacity.shoestore.ui.ShoeViewModel
 import java.lang.Exception
 
 class ShoeDetailFragment : Fragment(R.layout.fragment_shoe_detail) {
+
     private lateinit var binding: FragmentShoeDetailBinding
+
     private val shoe: Shoe by lazy {
         Shoe("",0.0,"","")
     }
+
     private val viewModel by lazy {
         ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
     }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,14 +47,15 @@ class ShoeDetailFragment : Fragment(R.layout.fragment_shoe_detail) {
 
     private fun addShoeToViewModel() {
         try{
-        shoe.size = binding.shoeSizeET.text.toString().toDouble()
-        shoe.name = binding.shoeNameET.text.toString()
-        shoe.company = binding.shoeCompanyET.text.toString()
-        shoe.description = binding.shoeDescriptionET.text.toString()
-        viewModel.mutableLiveData.value?.add(shoe)
-    }catch (e:Exception){
-        e.printStackTrace()
-    }
+            shoe.size = binding.shoeSizeET.text.toString().toDouble()
+            shoe.name = binding.shoeNameET.text.toString()
+            shoe.company = binding.shoeCompanyET.text.toString()
+            shoe.description = binding.shoeDescriptionET.text.toString()
+            viewModel.mutableLiveData.value?.add(shoe)
+        }
+        catch (e:Exception){
+            e.printStackTrace()
+        }
     }
 
 }

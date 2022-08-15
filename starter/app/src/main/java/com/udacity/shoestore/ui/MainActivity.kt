@@ -16,15 +16,6 @@ import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
-    //--------------------------------------------------------------------------------------------------------------------
-    //  Tried to do back button on appbar but it kept always show that error (code is commeneted below)                   |
-    //                                                                                                                    |
-    //    java.lang.RuntimeException: Unable to start activity                                                            |
-    //    ComponentInfo{com.udacity.shoestore/com.udacity.shoestore.ui.MainActivity}:                                     |
-    //    java.lang.NullPointerException: Attempt to invoke virtual method                                                |
-    //    'void androidx.appcompat.app.ActionBar.setTitle(java.lang.CharSequence)' on a null object reference             |
-    //                                                                                                                    |
-    //--------------------------------------------------------------------------------------------------------------------
 
     private val binding : ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -32,25 +23,33 @@ class MainActivity : AppCompatActivity() {
     private val viewModel by lazy {
         ViewModelProvider(this)[ShoeViewModel::class.java]
     }
+    private  val navHostFragment by lazy {
+        supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as
+                NavHostFragment
+    }
+    private val navController by lazy {
+        navHostFragment.navController
+    }
+
+    private val appBarConfiguration by lazy {
+        AppBarConfiguration(
+            setOf(
+                R.id.homeFragment,
+                R.id.loginFragment
+            )
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
         setSupportActionBar(binding.toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as
-                    NavHostFragment
-        val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.homeFragment,
-            R.id.loginFragment
-            ))
-
         binding.toolbar.setupWithNavController(navController,appBarConfiguration)
-        viewModel.setShoes()
 
+        viewModel.setShoes()
         Timber.plant(Timber.DebugTree())
     }
 
