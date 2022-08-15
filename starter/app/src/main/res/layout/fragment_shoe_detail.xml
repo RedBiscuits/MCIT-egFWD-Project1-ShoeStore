@@ -1,10 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="@dimen/_50sdp"
+    android:paddingTop="@dimen/_20sdp"
+    android:paddingEnd="@dimen/_50sdp"
     tools:context=".ui.home.ShoeDetailFragment">
 
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:contentDescription="@string/shoeImage"
+        android:src="@drawable/shoe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/shoe_name_TV"
+        style="@style/MainTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/shoe_name_ET"
+        android:text="@string/name"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/shoe_name_ET"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/shoe_name_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Name"
+        android:ems="12"
+        android:importantForAutofill="yes"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/shoe_name_TV"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/shoe_size_TV"
+        style="@style/MainTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:labelFor="@+id/shoe_size_ET"
+        android:text="@string/size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shoe_name_TV" />
+
+    <EditText
+        android:id="@+id/shoe_size_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:autofillHints="Size"
+        android:ems="12"
+        android:importantForAutofill="yes"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/shoe_size_TV"
+        app:layout_constraintStart_toEndOf="@+id/shoe_size_TV"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/shoe_company_TV"
+        style="@style/MainTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/shoe_company_ET"
+        android:text="@string/company"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/shoe_company_ET"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/shoe_company_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="Company"
+        android:ems="12"
+        android:importantForAutofill="yes"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/shoe_company_TV"
+        app:layout_constraintTop_toBottomOf="@+id/shoe_size_ET"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/shoe_description_TV"
+        style="@style/MainTextStyle"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/shoe_description_ET"
+        android:text="@string/description"
+        app:layout_constraintBottom_toBottomOf="@+id/shoe_description_ET"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/shoe_description_ET"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:autofillHints="Description"
+        android:ems="12"
+        android:importantForAutofill="yes"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/shoe_description_TV"
+        app:layout_constraintTop_toBottomOf="@+id/shoe_company_ET"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/shoe_detail_cancel_BTN"
+        style="@style/NextButtonsHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/shoe_detail_save_BTN"
+        style="@style/NextButtonsHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shoe_detail_cancel_BTN" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

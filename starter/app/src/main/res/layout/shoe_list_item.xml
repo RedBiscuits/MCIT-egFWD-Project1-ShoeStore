@@ -21,10 +21,10 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_180sdp"
+            android:layout_height="@dimen/_270sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:contentDescription="@string/shoeImage"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/shoe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

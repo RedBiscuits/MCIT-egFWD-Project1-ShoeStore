@@ -16,5 +16,9 @@
     <string name="shoeImage">ShoeImage</string>
     <string name="name">Name : </string>
     <string name="size">Size : </string>
-    <string name="logout">logout</string>
+    <string name="logout">logout </string>
+    <string name="company">Company : </string>
+    <string name="description">Description : </string>
+    <string name="cancel">cancel</string>
+    <string name="save">save</string>
 </resources>

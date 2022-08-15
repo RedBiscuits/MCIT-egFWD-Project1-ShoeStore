@@ -43,7 +43,10 @@ class MainActivity : AppCompatActivity() {
                     NavHostFragment
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.homeFragment,
+            R.id.loginFragment
+            ))
 
         binding.toolbar.setupWithNavController(navController,appBarConfiguration)
         viewModel.setShoes()
@@ -51,12 +54,4 @@ class MainActivity : AppCompatActivity() {
         Timber.plant(Timber.DebugTree())
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return NavigationUI.onNavDestinationSelected(item, this.findNavController(R.id.myNavHostFragment))
-//                || super.onOptionsItemSelected(item)
-//    }
-
-//    override fun onSupportNavigateUp(): Boolean {
-//        return navController.navigateUp()
-//    }
 }

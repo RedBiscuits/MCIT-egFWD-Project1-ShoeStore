@@ -1,8 +1,10 @@
 package com.udacity.shoestore.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -30,11 +32,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         savedInstanceState: Bundle?
     ): View {
 
+
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+
         binding.addShoeFAB.setOnClickListener {
             it.findNavController().navigate(R.id.action_homeFragment_to_shoeDetailFragment)
         }
         viewModel.mutableLiveData.observe(viewLifecycleOwner) { shoes ->
+            linearLayout.removeAllViews()
             for (shoe in shoes) {
                 addShoeView(shoe)
             }
@@ -61,6 +66,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val shoeBinding = ShoeListItemBinding.bind(shoeView)
         shoeBinding.shoe = shoe
         linearLayout.addView(shoeView)
+
     }
+
 
 }
