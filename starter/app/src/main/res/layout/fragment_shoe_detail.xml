@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<layout>
 <!--
     ConstraintsLayout to center views with each other and multiple
     screen size support
 -->
+    <data>
+        <variable
+            name="newShoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -41,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints="Name"
+        android:text="@={newShoe.name}"
         android:ems="12"
         android:importantForAutofill="yes"
         android:inputType="text"
@@ -65,6 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:autofillHints="Size"
+        android:text="@{String.valueOf(newShoe.size)}"
         android:ems="12"
         android:importantForAutofill="yes"
         android:inputType="number"
@@ -90,6 +99,7 @@
         android:autofillHints="Company"
         android:ems="12"
         android:importantForAutofill="yes"
+        android:text="@={newShoe.company}"
         android:inputType="text"
         android:minHeight="48dp"
         app:layout_constraintStart_toEndOf="@+id/shoe_company_TV"
@@ -115,6 +125,7 @@
         android:ems="12"
         android:importantForAutofill="yes"
         android:inputType="text"
+        android:text="@={newShoe.description}"
         app:layout_constraintStart_toEndOf="@+id/shoe_description_TV"
         app:layout_constraintTop_toBottomOf="@+id/shoe_company_ET"
         tools:ignore="DuplicateSpeakableTextCheck" />
@@ -139,3 +150,4 @@
         app:layout_constraintTop_toTopOf="@+id/shoe_detail_cancel_BTN" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

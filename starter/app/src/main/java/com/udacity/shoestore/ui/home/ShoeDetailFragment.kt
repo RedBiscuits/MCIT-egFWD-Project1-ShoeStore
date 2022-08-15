@@ -1,6 +1,7 @@
 package com.udacity.shoestore.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,10 +18,6 @@ class ShoeDetailFragment : Fragment(R.layout.fragment_shoe_detail) {
 
     private lateinit var binding: FragmentShoeDetailBinding
 
-    private val shoe: Shoe by lazy {
-        Shoe("",0.0,"","")
-    }
-
     private val viewModel by lazy {
         ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
     }
@@ -33,7 +30,7 @@ class ShoeDetailFragment : Fragment(R.layout.fragment_shoe_detail) {
     ): View {
 
         binding = FragmentShoeDetailBinding.inflate(layoutInflater, container, false)
-
+        binding.newShoe = Shoe()
         binding.shoeDetailCancelBTN.setOnClickListener{
                 it.findNavController().navigate(R.id.action_shoeDetailFragment_to_homeFragment2)
         }
@@ -47,11 +44,10 @@ class ShoeDetailFragment : Fragment(R.layout.fragment_shoe_detail) {
 
     private fun addShoeToViewModel() {
         try{
-            shoe.size = binding.shoeSizeET.text.toString().toDouble()
-            shoe.name = binding.shoeNameET.text.toString()
-            shoe.company = binding.shoeCompanyET.text.toString()
-            shoe.description = binding.shoeDescriptionET.text.toString()
-            viewModel.mutableLiveData.value?.add(shoe)
+            //i dont know how to do 2 way binding for double values
+            // perhaps will search for it when i get internet connectivity
+            binding.newShoe!!.size = binding.shoeSizeET.text.toString().toDouble()
+            viewModel.mutableLiveData.value?.add(binding.newShoe!!)
         }
         catch (e:Exception){
             e.printStackTrace()
